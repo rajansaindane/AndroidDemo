@@ -27,7 +27,7 @@ class RetrofitDemoActivity : AppCompatActivity() {
 
     private fun callRetrofit() {
         val service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService::class.java)
-        val call=service.addCountry("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJobzEiLCJjcmVhdGVkIjoxNTYyOTIzMjk5OTczLCJleHAiOjE1NjI5MzQwOTksInN0YXR1cyI6IlkifQ.kLpFtE4fZQ3wRnzqCYF9Bt9hSWFouAKq9uXDVRHbq1zHfgKIPXjpHOmOoJOifLtBiL2H4IVdM-Ioli_DynD2lg",getCountryData())
+        val call=service.addCountry("",getCountryData())
         call.enqueue(object :Callback<CountryResponse>{
             override fun onFailure(call: Call<CountryResponse>, t: Throwable) {
                 Toast.makeText(applicationContext,"fail to fetch data",Toast.LENGTH_LONG).show()
